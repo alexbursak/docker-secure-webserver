@@ -4,4 +4,4 @@
 Start docker container: \
 `docker run -it --cap-add=NET_ADMIN alexbursak/secure-webserver` \
 Refresh IP: \
-`/toriptables2.py -l`
+`/toriptables3.py -r`
