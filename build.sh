@@ -3,13 +3,25 @@
 MY_PATH="`dirname \"$0\"`"
 
 ARG="$1"
-TAG='latest'
+
+if [[ 'amd' != "$ARG" ]] && [[ 'arm' != "$ARG" ]]
+then
+  echo "ERROR: Invalid type - $ARG."
+  exit
+fi
 
 if [[ -z "$ARG" ]]
 then
-    TAG='latest'
+    TYPE='amd'
+    TAG='amd'
 else
+    TYPE=$ARG
     TAG=$ARG
 fi
 
-docker build -t alexbursak/secure-webserver:"$TAG" "$MY_PATH"
+echo "Building WebServer image:"
+echo "Architecuture - $TYPE"
+echo "Tag - $TAG"
+echo "-------------------------"
+
+docker build -f "$TYPE".Dockerfile -t alexbursak/secure-webserver:"$TAG" .
