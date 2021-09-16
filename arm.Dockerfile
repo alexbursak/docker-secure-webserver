@@ -1,5 +1,4 @@
-#FROM kalilinux/kali:latest
-FROM kalilinux/kali@sha256:dc50a060a8b4af8a89a32636acd926a3408367d37df482e4b886c2d87d08c685
+FROM arm32v7/ubuntu
 
 RUN apt-get update
 
@@ -13,13 +12,6 @@ RUN apt-get install php7.4 -y && \
     apt-get install php-mysql -y && \
     apt-get install php7.4-zip -y && \
     apt-get install php7.4-fpm -y
-
-#RUN apt-get install php7.4 -y
-#RUN apt-get install php7.4-xml -y
-#RUN apt-get install php7.4-mbstring -y
-#RUN apt-get install php-mysql -y
-#RUN apt-get install php7.4-zip -y
-#RUN apt-get install php7.4-fpm -y
 
 # Install other
 RUN apt-get install apache2 -y && \
