@@ -1,4 +1,4 @@
-FROM armv7/armhf-ubuntu
+FROM arm32v7/ubuntu:18.04
 
 RUN apt-get update
 
@@ -6,6 +6,9 @@ RUN echo "Europe/London" > /etc/timezone
 RUN apt-get install tzdata
 
 # Install PHP7.4
+RUN apt -y install software-properties-common
+RUN add-apt-repository ppa:ondrej/php
+RUN apt-get update
 RUN apt-get install php7.4 -y && \
     apt-get install php7.4-xml -y && \
     apt-get install php7.4-mbstring -y && \
@@ -14,15 +17,14 @@ RUN apt-get install php7.4 -y && \
     apt-get install php7.4-fpm -y
 
 # Install other
-RUN apt-get install apache2 -y && \
-    apt-get install ufw -y && \
-    apt-get install systemd -y && \
-    apt-get install curl -y && \
-    apt-get install composer -y && \
-    apt-get install vim -y && \
-    apt-get install python2 -y && \
-    apt-get install tor -y && \
-    apt-get install wget -y
+RUN apt-get install apache2 -y
+RUN    apt-get install ufw -y
+RUN    apt-get install systemd -y
+RUN    apt-get install curl -y
+RUN    apt-get install composer -y
+RUN    apt-get install vim -y
+RUN    apt-get install tor -y
+RUN    apt-get install wget -y
 
 # Install node and npm
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
