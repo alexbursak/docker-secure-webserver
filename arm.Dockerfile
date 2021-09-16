@@ -21,10 +21,15 @@ RUN apt-get install apache2 -y
 RUN    apt-get install ufw -y
 RUN    apt-get install systemd -y
 RUN    apt-get install curl -y
-RUN    apt-get install composer -y
+#RUN    apt-get install composer -y
 RUN    apt-get install vim -y
 RUN    apt-get install tor -y
 RUN    apt-get install wget -y
+
+COPY ./composer-setup.sh /composer-setup.sh
+RUN bash /composer-setup.sh
+
+RUN mv /composer.phar /usr/bin/composer
 
 # Install node and npm
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
