@@ -1,5 +1,5 @@
-FROM kalilinux/kali:latest
-#FROM kalilinux/kali@sha256:dc50a060a8b4af8a89a32636acd926a3408367d37df482e4b886c2d87d08c685
+#FROM kalilinux/kali:latest
+FROM kalilinux/kali@sha256:dc50a060a8b4af8a89a32636acd926a3408367d37df482e4b886c2d87d08c685
 
 RUN apt-get update
 
