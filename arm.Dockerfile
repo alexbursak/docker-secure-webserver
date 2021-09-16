@@ -1,4 +1,4 @@
-FROM arm32v7/ubuntu
+FROM armv7/armhf-ubuntu
 
 RUN apt-get update
 
