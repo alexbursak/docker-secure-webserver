@@ -14,7 +14,7 @@ RUN apt -y install software-properties-common && \
     apt-get install php7.4 -y && \
     apt-get install php7.4-xml -y && \
     apt-get install php7.4-mbstring -y && \
-    apt-get install php-mysql -y && \
+    apt-get install php7.4-mysql -y && \
     apt-get install php7.4-zip -y && \
     apt-get install php7.4-fpm -y
 
