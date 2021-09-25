@@ -10,7 +10,7 @@ then
   exit
 fi
 
-if [[ -z "$ARG" ]]
+if [[ "$ARG" == 'amd' ]]
 then
     TYPE='amd'
     TAG='amd'
