@@ -14,9 +14,11 @@ if [[ -z "$ARG" ]]
 then
     TYPE='amd'
     TAG='amd'
+    PLATFORM='linux/amd64'
 else
     TYPE=$ARG
     TAG=$ARG
+    PLATFORM='linux/arm/v7'
 fi
 
 echo "Building WebServer image:"
@@ -24,4 +26,4 @@ echo "Architecuture - $TYPE"
 echo "Tag - $TAG"
 echo "-------------------------"
 
-docker build -f "$TYPE".Dockerfile -t alexbursak/secure-webserver:"$TAG" .
+docker buildx build -f "$TYPE".Dockerfile -t alexbursak/secure-webserver:"$TAG" --platform "$PLATFORM" --load .
