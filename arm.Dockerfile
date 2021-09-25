@@ -21,7 +21,6 @@ RUN apt-get install apache2 -y
 RUN    apt-get install ufw -y
 RUN    apt-get install systemd -y
 RUN    apt-get install curl -y
-#RUN    apt-get install composer -y
 RUN    apt-get install vim -y
 RUN    apt-get install tor -y
 RUN    apt-get install wget -y
